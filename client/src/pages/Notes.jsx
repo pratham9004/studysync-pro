@@ -141,7 +141,7 @@ export default function Notes() {
               </button>
             </div>
             <a
-              href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${note.fileUrl}`}
+              href={`${import.meta.env.VITE_API_URL?.replace(/\/api$/, '') || 'http://localhost:5000'}${note.fileUrl}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-block text-blue-600 hover:underline"
