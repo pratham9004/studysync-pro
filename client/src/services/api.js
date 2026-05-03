@@ -1,7 +1,12 @@
 import axios from 'axios';
 
+// Debug: Verify VITE_API_URL is loaded
+console.log('API Base URL:', import.meta.env.VITE_API_URL);
+
+const API = import.meta.env.VITE_API_URL;
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+  baseURL: `${API}/api`
 });
 
 api.interceptors.request.use((config) => {
